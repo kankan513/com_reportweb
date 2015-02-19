@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>Description of the Report Web ...</description>
  
@@ -27,11 +27,13 @@
 	<files folder="site">
 		<filename>index.html</filename>
 		<filename>reportweb.php</filename>
+		<filename>controller.php</filename>	
+		<folder>views</folder>
 	</files>
  
 	<administration>
 		<!-- Administration Menu Section -->
-		<menu link='index.php?option=com_helloworld'>Hello World!</menu>
+		<menu link='index.php?option=com_reportweb'>Report Web</menu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
