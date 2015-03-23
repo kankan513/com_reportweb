@@ -23,6 +23,6 @@ class ReportwebTableReportweb extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__helloworld', 'id', $db);
+		parent::__construct('#__package', 'id', $db);
 	}
 }
