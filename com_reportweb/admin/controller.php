@@ -8,13 +8,15 @@ jimport('joomla.application.component.controller');
 /**
  * General Controller of HelloWorld component
  */
-class ReportWebController extends JController
+class ReportWebController extends JControllerLegacy
 {
 	/**
 	 * display task
 	 *
 	 * @return void
 	 */
+	protected $default_view = 'reportwebs';
+	 
 	function display($cachable = false, $urlparams = false) 
 	{
 		// set default view if not set
@@ -22,6 +24,6 @@ class ReportWebController extends JController
 		$input->set('view', $input->getCmd('view', 'ReportWebs'));
  
 		// call parent behavior
-		parent::display($cachable);
+		parent::display($cachable, $urlparams);
 	}
 }

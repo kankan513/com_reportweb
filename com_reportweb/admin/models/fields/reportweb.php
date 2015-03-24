@@ -24,7 +24,7 @@ class JFormFieldReportWeb extends JFormFieldList
 	 *
 	 * @var         string
 	 */
-	protected $type = 'HelloWorld';
+	protected $type = 'reportweb';
  
 	/**
 	 * Method to get a list of options for a list input.
@@ -35,8 +35,8 @@ class JFormFieldReportWeb extends JFormFieldList
 	{
 		$db    = JFactory::getDBO();
 		$query = $db->getQuery(true);
-		$query->select('id,greeting');
-		$query->from('#__helloworld');
+		$query->select('*');
+		$query->from('#__package');
 		$db->setQuery((string) $query);
 		$messages = $db->loadObjectList();
 		$options  = array();

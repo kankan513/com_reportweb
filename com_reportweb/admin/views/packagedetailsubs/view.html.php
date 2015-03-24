@@ -8,7 +8,7 @@ jimport('joomla.application.component.view');
 /**
  * HelloWorlds View
  */
-class ReportWebViewReportWebs extends JViewLegacy
+class ReportWebViewPackageDetailSubs extends JViewLegacy
 {
 	/**
 	 * HelloWorlds view display method
@@ -27,7 +27,7 @@ class ReportWebViewReportWebs extends JViewLegacy
 			return false;
 		}
 		
-		ReportWebHelper::addSubmenu('ReportWebs');
+		ReportWebHelper::addSubmenu('PackageDetailSubs');
 		
 		// Set the toolbar
 		$this->addToolBar();
@@ -43,10 +43,10 @@ class ReportWebViewReportWebs extends JViewLegacy
 	 */
 	protected function addToolBar($total=null) 
 	{
-		JToolBarHelper::title(JText::_('COM_REPORTWEB_MANAGER_REPORTWEBS'));
-		JToolBarHelper::addNew('reportweb.add');
-		JToolBarHelper::editList('reportweb.edit');
-		JToolBarHelper::deleteList('', 'reportwebs.delete');
+		JToolBarHelper::title(JText::_('Package Detail Sub'));
+		JToolBarHelper::addNew('packagedetailsub.add');
+		JToolBarHelper::editList('packagedetailsub.edit');
+		JToolBarHelper::deleteList('', 'packagedetailsubs.delete');
 	}
 	/**
 	 * Method to set up the document properties

@@ -10,7 +10,7 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
 ?>
-<form action="index.php?option=com_reportweb&view=reportwebs" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_reportweb&view=packagedetails" method="post" id="adminForm" name="adminForm">
 	<table class="table table-striped table-hover">
 		<thead>
 		<tr>
@@ -18,20 +18,8 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="2%">
 				<?php echo JHtml::_('grid.checkall'); ?>
 			</th>
-			<th width="5%">
-				<?php echo JText::_('แพคเกจ') ;?>
-			</th>
-			<th width="20%">
-				<?php echo JText::_('Website'); ?>
-			</th>
-			<th width="20%">
-				<?php echo JText::_('MA Contact Expire'); ?>
-			</th>
-			<th width="20%">
-				<?php echo JText::_('Domain Expire'); ?>
-			</th>
-			<th width="20%">
-				<?php echo JText::_('Hosting Expire'); ?>
+			<th width="95%">
+				<?php echo JText::_('Name') ;?>
 			</th>
 			<th width="2%">
 				<?php echo JText::_('ID'); ?>
@@ -55,22 +43,7 @@ defined('_JEXEC') or die('Restricted Access');
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td>
-								<?php echo $row->packagename; ?>
-						</td>
-						<td>
-								<?php echo $row->website_name; ?>
-						</td>
-						<td>
-								<?php echo $row->ma_contace_expire; ?>
-						</td>
-						<td>
-								<?php echo $row->domain_expire; ?>
-						</td>
-						<td>
-								<?php echo $row->hosting_expire; ?>
-						</td>
-						<td align="center">
-							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'reportwebs.', true, 'cb'); ?>
+								<?php echo $row->name; ?>
 						</td>
 						<td align="center">
 							<?php echo $row->id; ?>

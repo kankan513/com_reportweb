@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.6</version>
+	<version>0.0.10</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>Description of the Report Web ...</description>
 	
@@ -40,6 +40,7 @@
 		<filename>controller.php</filename>	
 		<folder>views</folder>
 		<folder>models</folder>
+		<folder>language</folder>
 	</files>
  
 	<administration>
@@ -53,13 +54,19 @@
 			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
 			<filename>reportweb.php</filename>
-			<!-- SQL files section -->
+			<filename>controller.php</filename>
+			<filename>access.xml</filename>
 			<folder>sql</folder>
-			<!-- tables files section -->			
 			<folder>tables</folder>			
-			<!-- models files section -->			
 			<folder>models</folder>
+			<folder>views</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
 		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_reportweb.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_reportweb.sys.ini</language>
+		</languages>
 	</administration>
  
 </extension>

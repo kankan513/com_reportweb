@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field name="package_detail_id" type="sql" default="0" label="Group Name" query="SELECT id AS value, name AS package_detail_id FROM #__package_detail" />
+		<field
+			name="name"
+			type="text"
+			label="ชื่อ"
+			description="ชื่อ"
+			size="40"
+			class="inputbox"
+			default=""
+		/>
+	</fieldset>
+</form>

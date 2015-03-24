@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="package_id"
+			type="sql"
+			label="แพคเกจ"
+			default="0"
+			query="SELECT a.id AS value, b.name AS package_id FROM #__package a LEFT JOIN #__package_name b ON a.package_name_id = b.id"
+		/>
+		<field name="website_name" type="text" default="" label="Website" description="" size="40" />
+		<field name="ma_contact_expire" type="calendar" default="NOW" label="MA Contact Expire" description="" format="%d-%m-%Y" />
+		<field name="domain_expire" type="calendar" default="NOW" label="Domain Expire" description="" format="%d-%m-%Y" />
+		<field name="hosting_expire" type="calendar" default="NOW" label="Hosting Expire" description="" format="%d-%m-%Y" />
+	</fieldset>
+</form>
