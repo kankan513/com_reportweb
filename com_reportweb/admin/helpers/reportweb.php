@@ -14,6 +14,10 @@ abstract class ReportWebHelper
 	{
 		JSubMenuHelper::addEntry(JText::_('Report Web'),
 		                         'index.php?option=com_reportweb', $submenu == 'ReportWebs');
+		JSubMenuHelper::addEntry(JText::_('Package'),
+		                         'index.php?option=com_reportweb&view=packages', $submenu == 'Packages');
+		JSubMenuHelper::addEntry(JText::_('Package Name'),
+		                         'index.php?option=com_reportweb&view=packagenames', $submenu == 'PackageNames');
 		JSubMenuHelper::addEntry(JText::_('Package Detail'),
 		                         'index.php?option=com_reportweb&view=packagedetails', $submenu == 'PackageDetails');
 		JSubMenuHelper::addEntry(JText::_('Package Detail Sub'),
