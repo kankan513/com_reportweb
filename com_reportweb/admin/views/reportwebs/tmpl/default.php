@@ -40,7 +40,7 @@ defined('_JEXEC') or die('Restricted Access');
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="5">
+				<td colspan="8">
 					<?php echo $this->pagination->getListFooter(); ?>
 				</td>
 			</tr>
@@ -55,23 +55,23 @@ defined('_JEXEC') or die('Restricted Access');
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td>
-								<?php echo $row->packagename; ?>
+								<?php echo $row->name; ?>
 						</td>
 						<td>
 								<?php echo $row->website_name; ?>
 						</td>
 						<td>
-								<?php echo $row->ma_contace_expire; ?>
+								<?php echo date("d-m-Y", strtotime($row->ma_contact_expire)); ?>
 						</td>
 						<td>
-								<?php echo $row->domain_expire; ?>
+								<?php echo date("d-m-Y", strtotime($row->domain_expire)); ?>
 						</td>
 						<td>
-								<?php echo $row->hosting_expire; ?>
+								<?php echo date("d-m-Y", strtotime($row->hosting_expire)); ?>
 						</td>
-						<td align="center">
+						<?php /*?><td align="center">
 							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'reportwebs.', true, 'cb'); ?>
-						</td>
+						</td><?php */?>
 						<td align="center">
 							<?php echo $row->id; ?>
 						</td>

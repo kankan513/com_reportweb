@@ -4,6 +4,8 @@ defined('_JEXEC') or die('Restricted access');
  
 // import Joomla view library
 jimport('joomla.application.component.view');
+
+echo '<script type="text/javascript" src="'.JURI::base(true).'/components/com_reportweb/asset/js/package.js"></script>';
  
 /**
  * HelloWorld View

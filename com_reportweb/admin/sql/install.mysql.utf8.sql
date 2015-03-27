@@ -9,8 +9,8 @@ CREATE TABLE `#__package` (
   `package_name_id` int(11) NOT NULL,
   `package_detail_id` int(11) NOT NULL,
   `package_detail_sub_id` int(11) NOT NULL,
-  `package_package` int(11) NOT NULL,
-  `package_practical` int(11) NOT NULL,
+  `package_package` varchar(255) NOT NULL,
+  `package_practical` varchar(255) NOT NULL,
   `package_remark` text,
   `package_wms_information` int(11) NOT NULL,
    PRIMARY KEY  (`id`)

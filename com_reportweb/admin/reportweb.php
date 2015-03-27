@@ -1,6 +1,9 @@
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+$document = JFactory::getDocument();
+$document->addStyleSheet(JURI::base(true).'/components/com_reportweb/asset/css/font-awesome.min.css');
+
 
 // Require helper file
 JLoader::register('ReportWebHelper', JPATH_COMPONENT . '/helpers/reportweb.php');

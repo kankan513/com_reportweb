@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class ReportwebTableReportweb extends JTable
+class ReportwebTableReportWeb extends JTable
 {
 	/**
 	 * Constructor
@@ -23,6 +23,6 @@ class ReportwebTableReportweb extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__package', 'id', $db);
+		parent::__construct('#__wms_information', 'id', $db);
 	}
 }

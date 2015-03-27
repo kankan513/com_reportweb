@@ -18,8 +18,23 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="2%">
 				<?php echo JHtml::_('grid.checkall'); ?>
 			</th>
-			<th width="95%">
-				<?php echo JText::_('Name') ;?>
+			<th width="5%">
+				<?php echo JText::_('Package Type') ;?>
+			</th>
+			<th width="25%">
+				<?php echo JText::_('Package Detail') ;?>
+			</th>
+			<th width="25%">
+				<?php echo JText::_('Package Detail Sub') ;?>
+			</th>
+			<th width="5%">
+				<?php echo JText::_('Package') ;?>
+			</th>
+			<th width="5%">
+				<?php echo JText::_('Practical') ;?>
+			</th>
+			<th width="30%">
+				<?php echo JText::_('Remark') ;?>
 			</th>
 			<th width="2%">
 				<?php echo JText::_('ID'); ?>
@@ -28,7 +43,7 @@ defined('_JEXEC') or die('Restricted Access');
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="5">
+				<td colspan="9">
 					<?php echo $this->pagination->getListFooter(); ?>
 				</td>
 			</tr>
@@ -38,12 +53,41 @@ defined('_JEXEC') or die('Restricted Access');
 				<?php foreach ($this->items as $i => $row) : ?>
  
 					<tr>
-						<td><?php echo $this->pagination->getRowOffset($i); ?></td>
+						<td align="center"><?php echo $this->pagination->getRowOffset($i); ?></td>
 						<td>
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td>
-								<?php echo $row->name; ?>
+								<?php echo $row->package_name; ?>
+						</td>
+						<td>
+								<?php echo $row->package_detail; ?>
+						</td>
+						<td>
+								<?php echo $row->package_detail_sub; ?>
+						</td>
+						<td align="center">
+								<?php 
+								if($row->package_package === "-1"){
+									echo '<i class="fa fa-check" style="color:green;"></i>';
+								}
+								else{
+									echo $row->package_package;
+								}
+								?>
+						</td>
+						<td align="center">
+							<?php 
+								if($row->package_practical === "-1"){
+									echo '<i class="fa fa-check" style="color:green;"></i>';
+								}
+								else{
+									echo $row->package_practical;
+								}
+								?>
+						</td>
+						<td>
+								<?php echo $row->remark; ?>
 						</td>
 						<td align="center">
 							<?php echo $row->id; ?>

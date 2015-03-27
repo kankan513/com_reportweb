@@ -5,15 +5,13 @@
 			name="id"
 			type="hidden"
 		/>
-		<field name="package_detail_id" type="sql" default="0" label="Group Name" query="SELECT id AS value, name AS package_detail_id FROM #__package_detail" />
-		<field
-			name="name"
-			type="text"
-			label="ชื่อ"
-			description="ชื่อ"
-			size="40"
-			class="inputbox"
-			default=""
-		/>
+		<field name="package_name_id" type="sql" default="0" label="Package Name" query="SELECT id AS value, name AS package_name_id FROM #__package_name" />
+		<field name="package_detail_id" type="sql" default="0" label="Package Detail" query="SELECT id AS value, name AS package_detail_id FROM #__package_detail" />
+		<field name="package_detail_sub_id" type="list" default="" label="Package Detail Sub" description="">
+		  <option value="0">กรุณาเลือก</option>
+		</field>
+		<field name="package_package" type="text" label="รายละเอียดแพคเกจ" description="รายละเอียดแพคเกจ" size="40" class="inputbox" default="" />
+		<field name="package_practical" type="text" label="Practical" description="Practical" size="40" class="inputbox" default="" />
+		<field name="package_remark" type="textarea" default="" label="Comment" description="" rows="10" cols="10" />
 	</fieldset>
 </form>
