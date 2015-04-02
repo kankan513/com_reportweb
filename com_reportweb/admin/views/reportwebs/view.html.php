@@ -16,6 +16,8 @@ class ReportWebViewReportWebs extends JViewLegacy
 	 */
 	function display($tpl = null) 
 	{
+		$webid = JRequest::getVar('webid');
+		if(!$webid){
 		// Get data from the model
 		$this->items		= $this->get('Items');
 		$this->pagination	= $this->get('Pagination');
@@ -37,6 +39,12 @@ class ReportWebViewReportWebs extends JViewLegacy
 		
 		// Set the document
 		$this->setDocument();
+		}
+		else{
+			$this->prints		= $this->get('print');
+			
+			parent::display($tpl);
+		}
 	}
 	/**
 	 * Setting the toolbar
@@ -47,6 +55,7 @@ class ReportWebViewReportWebs extends JViewLegacy
 		JToolBarHelper::addNew('reportweb.add');
 		JToolBarHelper::editList('reportweb.edit');
 		JToolBarHelper::deleteList('', 'reportwebs.delete');
+		JToolBarHelper::custom('reportwebs.prints', '', '', 'Print', false);
 	}
 	/**
 	 * Method to set up the document properties

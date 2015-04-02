@@ -27,4 +27,22 @@ class ReportWebModelReportWebs extends JModelList
  
 		return $query;
 	}
+	
+	public function getprint()
+	{
+		$webid = JRequest::getVar('webid');		
+		$db    = JFactory::getDbo();
+		$query = $db->getQuery(true);
+ 
+		// Create the base select statement.
+		$query->select($db->quoteName(array('a.id', 'c.name', 'a.website_name', 'a.ma_contact_expire', 'a.domain_expire', 'a.hosting_expire')));
+		$query->from($db->quoteName('#__wms_information', 'a'));
+		$query->join('LEFT', $db->quoteName('#__package', 'b') .'ON ('. $db->quoteName('a.package_id').' = '.$db->quoteName('b.id').')');
+		$query->join('LEFT', $db->quoteName('#__package_name', 'c') .'ON ('. $db->quoteName('b.package_name_id').' = '.$db->quoteName('c.id').')');
+		$query->where($db->quoteName('a.id') . ' = '. $db->quote($webid));		
+		$db->setQuery($query);
+		$row = $db->loadObjectList();
+		
+		return $row;
+	}
 }
