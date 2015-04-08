@@ -55,7 +55,7 @@ class ReportWebViewReportWebs extends JViewLegacy
 		JToolBarHelper::addNew('reportweb.add');
 		JToolBarHelper::editList('reportweb.edit');
 		JToolBarHelper::deleteList('', 'reportwebs.delete');
-		JToolBarHelper::custom('reportwebs.prints', '', '', 'Print', false);
+		JToolBarHelper::custom('reportwebs.prints', 'print', 'printer', 'Print', false);
 	}
 	/**
 	 * Method to set up the document properties

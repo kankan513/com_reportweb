@@ -20,7 +20,7 @@ class ReportWebModelPackages extends JModelList
 		$query = $db->getQuery(true);
  
 		// Create the base select statement.
-		$query->select($db->quoteName(array('a.id', 'b.name', 'c.name', 'd.name', 'a.package_package', 'a.package_practical'),array('id', 'package_name', 'package_detail', 'package_detail_sub', 'package_package', 'package_practical')));
+		$query->select($db->quoteName(array('a.id', 'b.name', 'c.name', 'd.name', 'a.package_package', 'a.package_practical', 'a.package_remark'),array('id', 'package_name', 'package_detail', 'package_detail_sub', 'package_package', 'package_practical', 'package_remark')));
 		$query->from($db->quoteName('#__package', 'a'));
 		$query->join('LEFT', $db->quoteName('#__package_name', 'b').'ON ('. $db->quoteName('a.package_name_id'). ' = '. $db->quoteName('b.id').')' );
 		$query->join('LEFT', $db->quoteName('#__package_detail', 'c').'ON ('. $db->quoteName('a.package_detail_id'). ' = '. $db->quoteName('c.id').')' );

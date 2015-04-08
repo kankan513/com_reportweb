@@ -87,7 +87,7 @@ defined('_JEXEC') or die('Restricted Access');
 								?>
 						</td>
 						<td>
-								<?php echo $row->remark; ?>
+								<?php echo $row->package_remark; ?>
 						</td>
 						<td align="center">
 							<?php echo $row->id; ?>
