@@ -40,4 +40,37 @@ defined('_JEXEC') or die('Restricted Access');
 		<td bgcolor="#00CCFF" width="10%" align="center"><h5>Practical</h5></td>
 		<td bgcolor="#00CCFF" width="20%" align="center"><h5>Remark</h5></td>
 	</tr>
+  <?php foreach($this->maindetail['main'] as $item):?>
+  <tr>
+  	<td colspan="4" bgcolor="#00FFFF"><?php echo $item->name;?></td>
+  </tr>
+		<?php foreach($this->maindetail['sub'] as $item2):?>
+    	<?php foreach($item2 as $item3):?>
+        <tr>
+          <td><?php echo $item3->name;?></td>
+          <td>
+          	<?php 
+							if($item3->package_package === "-1"){
+								echo '<i class="fa fa-check" style="color:green;"></i>';
+							}
+							else{
+								echo $item3->package_package;
+							}
+							?>
+          </td>
+          <td>
+          	<?php 
+							if($item3->package_practical === "-1"){
+								echo '<i class="fa fa-check" style="color:green;"></i>';
+							}
+							else{
+								echo $item3->package_practical;
+							}
+							?>
+          </td>
+          <td><?php echo $item3->package_remark;?></td>
+        </tr>
+      <?php endforeach;?>
+    <?php endforeach;?>
+  <?php endforeach;?>
 </table>

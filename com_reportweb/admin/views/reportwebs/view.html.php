@@ -42,6 +42,7 @@ class ReportWebViewReportWebs extends JViewLegacy
 		}
 		else{
 			$this->prints		= $this->get('print');
+			$this->maindetail		= $this->get('maindetail');
 			
 			parent::display($tpl);
 		}

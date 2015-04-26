@@ -33,6 +33,9 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="20%">
 				<?php echo JText::_('Hosting Expire'); ?>
 			</th>
+      <th width="20%">
+				<?php echo JText::_('Print'); ?>
+			</th>
 			<th width="2%">
 				<?php echo JText::_('ID'); ?>
 			</th>
@@ -69,9 +72,9 @@ defined('_JEXEC') or die('Restricted Access');
 						<td>
 								<?php echo date("d-m-Y", strtotime($row->hosting_expire)); ?>
 						</td>
-						<?php /*?><td align="center">
-							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'reportwebs.', true, 'cb'); ?>
-						</td><?php */?>
+						<td align="center">
+							<input type="button" onClick="window.location.href='index.php?option=com_reportweb&tmpl=component&print=1&layout=print&webid=<?php echo $row->id; ?>'" value="Print" />
+						</td>
 						<td align="center">
 							<?php echo $row->id; ?>
 						</td>
