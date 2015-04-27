@@ -40,37 +40,28 @@ defined('_JEXEC') or die('Restricted Access');
 		<td bgcolor="#00CCFF" width="10%" align="center"><h5>Practical</h5></td>
 		<td bgcolor="#00CCFF" width="20%" align="center"><h5>Remark</h5></td>
 	</tr>
-  <?php foreach($this->maindetail['main'] as $item):?>
+  <?php foreach($this->maindetail as $item):?>
   <tr>
   	<td colspan="4" bgcolor="#00FFFF"><?php echo $item->name;?></td>
   </tr>
-		<?php foreach($this->maindetail['sub'] as $item2):?>
-    	<?php foreach($item2 as $item3):?>
+  <?php
+		$db    = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		
+		$query->select($db->quoteName(array('a.id', 'a.name', 'c.package_package', 'c.package_practical', 'c.package_remark')));
+		$query->from($db->quoteName('#__package_detail_sub', 'a'));
+		$query->join('LEFT', $db->quoteName('#__package_detail', 'b') .'ON ('. $db->quoteName('a.package_detail_id').' = '.$db->quoteName('b.id').')');
+		$query->join('LEFT', $db->quoteName('#__package', 'c') .'ON ('. $db->quoteName('a.id').' = '.$db->quoteName('c.package_detail_sub_id').')');
+		$query->where($db->quoteName('c.package_detail_id') . ' = '. $db->quote($item->id));	
+		$db->setQuery($query);
+		$row = $db->loadObjectList();
+		foreach($row as $item2):?>
         <tr>
-          <td><?php echo $item3->name;?></td>
-          <td>
-          	<?php 
-							if($item3->package_package === "-1"){
-								echo '<i class="fa fa-check" style="color:green;"></i>';
-							}
-							else{
-								echo $item3->package_package;
-							}
-							?>
-          </td>
-          <td>
-          	<?php 
-							if($item3->package_practical === "-1"){
-								echo '<i class="fa fa-check" style="color:green;"></i>';
-							}
-							else{
-								echo $item3->package_practical;
-							}
-							?>
-          </td>
-          <td><?php echo $item3->package_remark;?></td>
+          <td><?php echo $item2->name;?></td>
+          <td class="td-reportwebs"><?php echo $item2->package_package === "-1"?'<i class="fa fa-check" style="color:green;"></i>':$item2->package_package;?></td>
+          <td class="td-reportwebs"><?php echo $item2->package_practical === "-1" ?'<i class="fa fa-check" style="color:green;"></i>':$item2->package_practical;?></td>
+          <td><?php echo $item2->package_remark;?></td>
         </tr>
       <?php endforeach;?>
-    <?php endforeach;?>
   <?php endforeach;?>
 </table>

@@ -4,7 +4,8 @@ defined('_JEXEC') or die('Restricted access');
  
 // import Joomla view library
 jimport('joomla.application.component.view');
- 
+$document = JFactory::getDocument();
+$document->addStyleSheet(JURI::base( true ).'/components/com_reportweb/asset/css/reportwebs.css');
 /**
  * HelloWorlds View
  */
